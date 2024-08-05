@@ -1,0 +1,14 @@
+PyMuPDF
+transformers
+einops
+accelerate
+langchain
+bitsandbytes
+langchain-community
+llama_index==0.9.40
+sentence-transformers==2.3.1
+huggingface_hub
+python-dotenv
+torch==2.0.1+cu121
+fastapi
+uvicorn
