@@ -1,0 +1,25 @@
+name: rag_env
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.10
+  - pytorch
+  - pytorch-cuda=12.1
+  - fastapi
+  - uvicorn
+  - pip
+  - pip:
+    - PyMuPDF
+    - transformers
+    - einops
+    - accelerate
+    - langchain
+    - bitsandbytes
+    - langchain-community
+    - llama_index==0.9.40
+    - sentence-transformers==2.3.1
+    - huggingface_hub
+    - python-dotenv
