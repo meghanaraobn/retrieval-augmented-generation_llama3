@@ -41,7 +41,6 @@
     - Root Endpoint: 'GET /'
     - Create Document Index: 'POST /create_index' (parameter - document_path)
     - Delete Document Index: 'DELETE /delete_index/{ref_document_id}' (parameter - ref_document_id)
-        - ref_document_id should be fetched from 
     - Query Documents: 'POST /query_documents' (parameter - query_string)
 
 **Other Information 
@@ -50,11 +49,19 @@
     - Embed model used: all-mpnet-base-v2
     - For indexing: llama_index
 
-    - On startup: load environment variables -> hugging face login -> service context set up (configured with LLM, embedding model) -> initially index all documents present in '/docs/scientific_papers' (if persisted index not present) -> create index/delete index/query documents.
+    - Process Flow: 
+        - Startup
+        - Load environment variables
+        - Hugging face login 
+        - Service context set up (configured with LLM, embedding model)
+        - Initially index all documents present in '/docs/scientific_papers' 
+          (if persisted index is present, load the index present in '/docs/index') 
+        - Create index/Delete index/Query documents.
     
-    - When deleting a document from the index, its ref_document_id must be fetched from '/docs/index/docstore.json'. Documents are deleted from the index based on their ref_document_id, as this is the identifier used by llama_index for management.
+    - When deleting a document from the index, its ref_document_id must be fetched from '/docs/index/docstore.json'. 
+      Documents are deleted from the index based on their ref_document_id, as this is the identifier used by llama_index for management.
 
-** Further improvements
+**Further improvements
     - Improve index management to handle large volumes of documents more efficiently.
     - Fine-tune the Meta-Llama-3-8B-Instruct model.
     - Create broader range of prompts to cover more use cases which improve the LLM's ability to handle different queries.
