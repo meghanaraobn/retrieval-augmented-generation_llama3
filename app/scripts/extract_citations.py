@@ -12,7 +12,7 @@ class CitationsExtractor:
         Extracts author names and citation numbers from the provided text.
 
         Args:
-            text (str): The text from which to extract references.
+            text (str): The text from which to extract citations.
 
         Returns:
             results (dict): A dictionary containing 'author_names' and 'citation_numbers' lists.
@@ -117,7 +117,7 @@ class CitationsExtractor:
         Get the list of authors cited in text.
 
         Args:
-            text (str): The text to process for extracting references.
+            text (str): The text to process for extracting citations.
             document_path (str): The path of the document to fetch author names.
 
         Returns:

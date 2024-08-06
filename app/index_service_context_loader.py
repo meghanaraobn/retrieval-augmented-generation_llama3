@@ -120,6 +120,9 @@ class IndexServiceContextLoader:
     def create_index(self, li_document):
         """
         Create document Index.
+
+        Args:
+            li_document (Document): Document to index.
         """
         # Insert the document into the index
         self.index.insert(li_document)
@@ -131,6 +134,9 @@ class IndexServiceContextLoader:
     def delete_index(self, ref_document_id):
         """
         Delete document Index.
+
+        Args:
+            ref_document_id (str): Reference document id of the document.
         """
         # Delete the document index based on ref_doc_id
         self.index.delete_ref_doc(ref_doc_id=ref_document_id, delete_from_docstore=True)

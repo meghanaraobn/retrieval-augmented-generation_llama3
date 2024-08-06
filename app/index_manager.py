@@ -48,7 +48,7 @@ class IndexManager:
         Delete an index for a given document
 
         Args:
-            ref_doc_id (str): Reference document id of the document to be removed from index.
+            ref_document_id (str): Reference document id of the document to be removed from index.
         """
         try:
             # Delete index

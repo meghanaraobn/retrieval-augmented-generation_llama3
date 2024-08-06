@@ -10,12 +10,15 @@ import os
 app = FastAPI()
 
 # Global variables for services
+index_service_context_loader: IndexServiceContextLoader = None
 index_manager: IndexManager = None
 index_query_service: IndexQueryService = None
-index_service_context_loader: IndexServiceContextLoader = None
 
 @app.on_event("startup")
 def startup_event():
+    """
+    Event handler that runs on application startup.
+    """
     global index_service_context_loader, index_manager, index_query_service
 
     try:
@@ -38,6 +41,9 @@ def startup_event():
 
 @app.on_event("shutdown")
 def shutdown_event():
+    """
+     Event handler that runs on application shutdown.
+    """
     global index_service_context_loader, index_manager, index_query_service
 
     # Clean up resources
@@ -47,12 +53,15 @@ def shutdown_event():
 
 @app.get("/")
 async def read_root():
+    """
+    Root endpoint
+    """
     return {"message": "Retrieval Augmented Generation (RAG)!"}
 
 @app.post("/create_index")
 async def create_index(document_path: str):
     """
-    Create an index for the given document.
+    Endpoint to create an index for the given document.
 
     Args:
         document_path (str): The document to be indexed.
@@ -70,13 +79,13 @@ async def create_index(document_path: str):
 @app.delete("/delete_index/{ref_document_id}")
 async def delete_index(ref_document_id: str):
     """
-    Delete a document from the index based on the reference document id.
+    Endpoint to delete a document from the index based on the reference document id.
 
     Args:
         ref_document_id (str): The id of the document to be deleted from the index.
 
     Returns:
-        JSONResponse: A response indicating the result of the deletion.
+        JSONResponse: A response indicating success or failure.
     """
     global index_manager
     try:
@@ -88,7 +97,7 @@ async def delete_index(ref_document_id: str):
 @app.post("/query_documents")
 async def query_documents(query_string: str):
     """
-    Query the indexed documents with the provided query string.
+    Endpoint to query the indexed documents with the provided query string.
 
     Args:
         query_string (str): The query string to search in the indexed documents.
