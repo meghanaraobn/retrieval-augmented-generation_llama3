@@ -1,3 +1,15 @@
+## Models and API
+* API used: ``` FastAPI ```
+* LLM used: ```Meta-Llama-3-8B-Instruct ```
+* Embed model used: ``` all-mpnet-base-v2 ```
+* For indexing: ``` llama_index ```
+
+#### Endpoints
+* Root Endpoint: 'GET /'
+* Create Document Index: 'POST /create_index' (parameter - document_path)
+* Delete Document Index: 'DELETE /delete_index/{ref_document_id}' (parameter - ref_document_id)
+* Query Documents: 'POST /query_documents' (parameter - query_string)
+  
 ## Prerequisites
 * Linux or macOS (recommended)
 * Python 3
