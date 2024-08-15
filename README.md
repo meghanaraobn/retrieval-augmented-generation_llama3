@@ -26,7 +26,7 @@ The project is organized into the following directories and files:
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Installation
+#### Installation
 * To clone this repo:
   ```bash
   git clone https://github.com/meghanaraobn/retrieval-augmented-generation_llama3.git
