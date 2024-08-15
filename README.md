@@ -70,7 +70,7 @@ For managing the setup:
   ```bash
    HF_TOKEN=huggingface_token
   ```
-#### Other setup
+#### Other Setup
 * Place all the documents (.pdf files) in the directory: ``` /docs/scientific_papers ```
 * If you have a persisted index, place it in the directory: ``` /docs/index ```
 * Start the FastAPI application
@@ -81,5 +81,18 @@ For managing the setup:
   ```bash
   http://127.0.0.1:8000/docs
   ```
+### Process Flow
+* Startup
+* Load environment variables
+* Hugging face login
+* Service context set up (configured with LLM, embedding model)
+* Initially index all documents present in '/docs/scientific_papers' (if persisted index is present, load the index present in '/docs/index')
+* Create index/Delete index/Query documents.
+
+### Further Improvements
+* Improve index management to handle large volumes of documents more efficiently.
+* Fine-tune the Meta-Llama-3-8B-Instruct model.
+* Create a broader range of prompts to cover more use cases which improve the LLM's ability to handle different queries.
+* Improve techniques for citation extraction from the retrieved source text.
   
   
