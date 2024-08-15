@@ -5,10 +5,9 @@
 
 ## Code Structure
 The project is organized into the following directories and files:
-    ├── app
-    
-    │   ├── main.py
-    
+
+    ├── app    
+    │   ├── main.py   
     │   ├── index_manager.py
     │   ├── index_query_service.py
     │   ├── index_service_context_loader.py
