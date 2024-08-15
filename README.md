@@ -18,9 +18,9 @@ A dataset consisting of 100 different scientific papers covering various topics.
 
 #### Endpoints
 * Root Endpoint: ``` GET / ```
-* Create Document Index: ``` POST /create_index' (parameter - document_path) ```
-* Delete Document Index: ``` DELETE /delete_index/{ref_document_id}' (parameter - ref_document_id) ```
-* Query Documents: ``` POST /query_documents' (parameter - query_string) ```
+* Create Document Index: ``` POST /create_index (parameter - document_path) ```
+* Delete Document Index: ``` DELETE /delete_index/{ref_document_id} (parameter - ref_document_id) ```
+* Query Documents: ``` POST /query_documents (parameter - query_string) ```
   
 ## Prerequisites
 * Linux or macOS (recommended)
