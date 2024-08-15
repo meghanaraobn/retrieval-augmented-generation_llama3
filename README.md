@@ -58,20 +58,21 @@ For managing the setup:
   ```bash
    HF_TOKEN=huggingface_token
   ```
+#### Other setup
 * Place all the documents (.pdf files) in the directory:
- ```bash
+  ```bash
   /docs/scientific_papers
   ````
 * If you have a persisted index, place it in the directory:
-   ```bash
+  ```bash
   /docs/index
   ````
 * Start the FastAPI application
-   ```bash
+  ```bash
   uvicorn app.main:app --reload
   ````
 * Navigate to swagger UI
-  ``` bash
+  ```bash
    http://127.0.0.1:8000/docs
   ```
   
