@@ -73,7 +73,13 @@ For managing the setup:
 #### Other setup
 * Place all the documents (.pdf files) in the directory: ``` /docs/scientific_papers ```
 * If you have a persisted index, place it in the directory: ``` /docs/index ```
-* Start the FastAPI application ``` uvicorn app.main:app --reload ```
-* Navigate to swagger UI ``` http://127.0.0.1:8000/docs ```
+* Start the FastAPI application
+  ```bash
+  uvicorn app.main:app --reload
+  ```
+* Navigate to swagger UI
+  ```bash
+  http://127.0.0.1:8000/docs
+  ```
   
   
