@@ -5,23 +5,22 @@
 
 ## Code Structure
 The project is organized into the following directories and files:
-- `docs/`: Contains information documents related to the project.
-- `data/`: Contains input.txt file with sample text for testing purpose.
-- `src/`: Includes the main source code files.
-    - `models/`: Directory for model-related functionalities.
-        - `model_handler.py`: Script to load and save a model
-        - `topic_generation_model.py`: Script to train dynamic topic generation model.
-    - `scripts/`: Directory for additional scripts and utilities.
-        - `data_format.py`: Script to handle data formatting.
-    - `inference.py`: Script for model inference.
-    - `train.py`: Script for model training.
-- `dockerignore`: To exclude unnecessary files from the docker build context.
-- `gitignore`: To ignore certain files from version control.
-- `Dockerfile`: To build the project's docker image.
-- `docker-compose.yml`: Configuration file for docker compose.
-- `environment.yml`: Defines the conda environment for the project.
-- `requirements.txt`: Lists python dependencies required for the project.
-- `task.txt`: Task-related information.
+    ├── app
+    │   ├── main.py
+    │   ├── index_manager.py
+    │   ├── index_query_service.py
+    │   ├── index_service_context_loader.py
+    │   ├── scripts
+    │   │   └── extract_citations.py
+    ├── docs
+    │   └── index
+    │   └── scientific_papers
+    ├── environment.yml
+    ├── Dockerfile
+    ├── docker-compose.yml
+    ├── requirements.txt
+    ├── .env
+    └── instructions.txt
   
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -46,9 +45,9 @@ For managing the setup:
   ```bash
   docker-compose up -d
   ```
-* To enter into the container (topic-generation-container):
+* To enter into the container (rag-container):
   ```bash
-  docker exec -it topic-generation-container bash
+  docker exec -it rag-container bash
   ```
 * To stop the container:
   ```bash
