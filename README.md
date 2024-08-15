@@ -34,7 +34,7 @@ These instructions will get you a copy of the project up and running on your loc
   ```
 * For pip users, please type the command `pip install -r requirements.txt`.
 * For conda users, you can create a new conda environment using `conda env create -f environment.yml`.
-### Docker Support
+#### Docker Support
 This project includes docker support for easy setup with configurations provided in `docker-compose.yml` and `Dockerfile`. To enable GPU support within Docker containers, ensure the NVIDIA Container Toolkit is installed on the system. Detailed installation instructions can be found [here](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
 
 For managing the setup:
@@ -54,3 +54,25 @@ For managing the setup:
   ```bash
   docker-compose down
   ```
+* Set up hugging face token in .env file
+  ```bash
+   HF_TOKEN=huggingface_token
+  ```
+* Place all the documents (.pdf files) in the directory:
+ ```bash
+  /docs/scientific_papers
+  ````
+* If you have a persisted index, place it in the directory:
+   ```bash
+  /docs/index
+  ````
+* Start the FastAPI application
+   ```bash
+  uvicorn app.main:app --reload
+  ````
+* Navigate to swagger UI
+  ``` bash
+   http://127.0.0.1:8000/docs
+  ```
+  
+  
